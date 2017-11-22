@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar [color]="color">
+    <ion-title>Toolbar: {{color}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let item of colors" (click)="setColor(item)" [color]="item">
+      set Toolbar: {{item}}
+    </button>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,19 @@
+﻿
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ionic Components({{items.length}})</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-searchbar (ionInput)="getItems($event)"  placeholder="搜"></ion-searchbar>
+    
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      {{item.title}}
+    </button>
+  </ion-list>
+</ion-content>
