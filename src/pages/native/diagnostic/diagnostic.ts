@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Diagnostic } from '@ionic-native/diagnostic';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the DiagnosticPage page.
  *
@@ -15,23 +15,7 @@ import { Diagnostic } from '@ionic-native/diagnostic';
 })
 export class DiagnosticPage {
 
-  constructor(private diagnostic: Diagnostic) {
-    let successCallback = (isAvailable) => { console.log('Is available? ' + isAvailable); };
-    let errorCallback = (e) => console.error(e);
-
-    this.diagnostic.isCameraAvailable().then(successCallback).catch(errorCallback);
-
-    this.diagnostic.isBluetoothAvailable().then(successCallback, errorCallback);
-
-
-    this.diagnostic.getBluetoothState()
-      .then((state) => {
-        if (state == this.diagnostic.bluetoothState.POWERED_ON) {
-          // do something
-        } else {
-          // do something else
-        }
-      }).catch(e => console.error(e));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

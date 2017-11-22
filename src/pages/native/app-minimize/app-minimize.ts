@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage,Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { AppMinimize } from '@ionic-native/app-minimize';
-
-
+/**
+ * Generated class for the AppMinimizePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -12,13 +15,11 @@ import { AppMinimize } from '@ionic-native/app-minimize';
 })
 export class AppMinimizePage {
 
-  constructor(private platform: Platform, private appMinimize: AppMinimize) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppMinimizePage');
   }
-  registerBackButtonAction() {
-    this.platform.registerBackButtonAction(() => {
-      this.appMinimize.minimize();
-    });
-  }
+
 }

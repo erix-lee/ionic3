@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { HealthKit } from '@ionic-native/health-kit';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the HealthKitPage page.
  *
@@ -15,7 +15,8 @@ import { HealthKit } from '@ionic-native/health-kit';
 })
 export class HealthKitPage {
 
-  constructor(private healthKit: HealthKit) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HealthKitPage');

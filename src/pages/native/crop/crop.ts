@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Crop } from '@ionic-native/crop';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the CropPage page.
  *
@@ -15,14 +15,9 @@ import { Crop } from '@ionic-native/crop';
 })
 export class CropPage {
 
-  constructor(private crop: Crop) { }
-  cropImage(){
-    this.crop.crop('path/to/image.jpg', {quality: 75})
-    .then(
-      newImage => console.log('new image path is: ' + newImage),
-      error => console.error('Error cropping image', error)
-    );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CropPage');
   }

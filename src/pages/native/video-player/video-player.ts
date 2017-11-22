@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { VideoPlayer } from '@ionic-native/video-player';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the VideoPlayerPage page.
  *
@@ -15,14 +15,9 @@ import { VideoPlayer } from '@ionic-native/video-player';
 })
 export class VideoPlayerPage {
 
-  constructor(private videoPlayer: VideoPlayer) { }
-  play(){
-  this.videoPlayer.play('file:///android_asset/www/movie.mp4').then(() => {
-    console.log('video completed');
-   }).catch(err => {
-    console.log(err);
-   });
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideoPlayerPage');
   }

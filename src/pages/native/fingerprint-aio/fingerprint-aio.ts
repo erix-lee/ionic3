@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the FingerprintAioPage page.
  *
@@ -15,18 +15,9 @@ import { FingerprintAIO } from '@ionic-native/fingerprint-aio';
 })
 export class FingerprintAioPage {
 
-  constructor(private faio: FingerprintAIO) { }
-  show() {
-    this.faio.show({
-      clientId: 'Fingerprint-Demo',
-      clientSecret: 'password', //Only necessary for Android
-      disableBackup: true,  //Only for Android(optional)
-      localizedFallbackTitle: 'Use Pin', //Only for iOS
-      localizedReason: 'Please authenticate' //Only for iOS
-    })
-      .then((result: any) => console.log(result))
-      .catch((error: any) => console.log(error));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FingerprintAioPage');
   }

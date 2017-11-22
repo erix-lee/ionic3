@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the FlurryAnalyticsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -9,8 +15,9 @@ import { IonicPage } from 'ionic-angular';
 })
 export class FlurryAnalyticsPage {
 
-  constructor() { }
-  
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FlurryAnalyticsPage');
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the ContactsPage page.
  *
@@ -15,17 +15,9 @@ import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/cont
 })
 export class ContactsPage {
 
-  constructor(private contacts: Contacts) { }
-  save(){
-    let contact: Contact = this.contacts.create();
-    
-    contact.name = new ContactName(null, 'Smith', 'John');
-    contact.phoneNumbers = [new ContactField('mobile', '6471234567')];
-    contact.save().then(
-      () => console.log('Contact saved!', contact),
-      (error: any) => console.error('Error saving contact.', error)
-    );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContactsPage');
   }

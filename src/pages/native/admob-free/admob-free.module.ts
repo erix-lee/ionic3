@@ -8,6 +8,6 @@ import { AdmobFreePage } from './admob-free';
   ],
   imports: [
     IonicPageModule.forChild(AdmobFreePage),
-  ]
+  ],
 })
 export class AdmobFreePageModule {}

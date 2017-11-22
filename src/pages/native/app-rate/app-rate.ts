@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { AppRate } from '@ionic-native/app-rate';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the AppRatePage page.
  *
@@ -15,28 +15,9 @@ import { AppRate } from '@ionic-native/app-rate';
 })
 export class AppRatePage {
 
-  constructor(private appRate: AppRate) { }
-  storeAppURL() {
-    this.appRate.preferences.storeAppURL = {
-      ios: '<app_id>',
-      android: 'market://details?id=<package_name>',
-      windows: 'ms-windows-store://review/?ProductId=<store_id>'
-    };
-
-    this.appRate.promptForRating(true);
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  preferences() {
-    this.appRate.preferences = {
-      usesUntilPrompt: 3,
-      storeAppURL: {
-        ios: '<app_id>',
-        android: 'market://details?id=<package_name>',
-        windows: 'ms-windows-store://review/?ProductId=<store_id>'
-      }
-    };
 
-    this.appRate.promptForRating(false);
-  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppRatePage');
   }

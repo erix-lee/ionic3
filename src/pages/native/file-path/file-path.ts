@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { FilePath } from '@ionic-native/file-path';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the FilePathPage page.
  *
@@ -15,13 +15,9 @@ import { FilePath } from '@ionic-native/file-path';
 })
 export class FilePathPage {
 
-  constructor(private filePath: FilePath) { }
-  resolveNativePath(){
-    let path="";
-    this.filePath.resolveNativePath(path)
-    .then(filePath => console.log(filePath))
-    .catch(err => console.log(err));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilePathPage');
   }

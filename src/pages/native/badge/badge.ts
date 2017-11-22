@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Badge } from '@ionic-native/badge';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the BadgePage page.
@@ -16,15 +15,11 @@ import { Badge } from '@ionic-native/badge';
 })
 export class BadgePage {
 
-  constructor(private badge: Badge) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BadgePage');
   }
 
-  setBadge(){
-    this.badge.set(10);
-    this.badge.increase(1);
-    this.badge.clear();
-  }
 }

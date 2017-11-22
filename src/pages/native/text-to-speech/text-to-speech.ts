@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the TextToSpeechPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -9,12 +15,9 @@ import { TextToSpeech } from '@ionic-native/text-to-speech';
 })
 export class TextToSpeechPage {
 
-  constructor(private tts: TextToSpeech) { }
-  speak() {
-    this.tts.speak('Hello World')
-      .then(() => console.log('Success'))
-      .catch((reason: any) => console.log(reason));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad TextToSpeechPage');
   }

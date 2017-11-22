@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { CardIO } from '@ionic-native/card-io';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the CardIoPage page.
  *
@@ -15,22 +15,9 @@ import { CardIO } from '@ionic-native/card-io';
 })
 export class CardIoPage {
 
-  constructor(private cardIO: CardIO) { }
-  canScan(){
-    this.cardIO.canScan()
-    .then(
-      (res: boolean) => {
-        if(res){
-          let options = {
-            requireExpiry: true,
-            requireCVV: false,
-            requirePostalCode: false
-          };
-          this.cardIO.scan(options);
-        }
-      }
-    );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CardIoPage');
   }

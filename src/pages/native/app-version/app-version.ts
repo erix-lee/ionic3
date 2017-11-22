@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { AppVersion } from '@ionic-native/app-version';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the AppVersionPage page.
  *
@@ -15,16 +15,9 @@ import { AppVersion } from '@ionic-native/app-version';
 })
 export class AppVersionPage {
 
-  constructor(private appVersion: AppVersion) {
-
-
-
-
-    this.appVersion.getAppName();
-    this.appVersion.getPackageName();
-    this.appVersion.getVersionCode();
-    this.appVersion.getVersionNumber();
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AppVersionPage');
   }

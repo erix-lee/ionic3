@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { TapticEngine } from '@ionic-native/taptic-engine';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the TapticEnginePage page.
  *
@@ -15,16 +15,11 @@ import { TapticEngine } from '@ionic-native/taptic-engine';
 })
 export class TapticEnginePage {
 
-  constructor(private taptic: TapticEngine) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TapticEnginePage');
   }
-  selection() {
-    
-    this.taptic.selection();
-    //this.taptic.notification();
- 
-    //this.taptic.impact();
-  }
+
 }

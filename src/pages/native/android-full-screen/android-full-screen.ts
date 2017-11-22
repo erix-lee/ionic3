@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { AndroidFullScreen } from '@ionic-native/android-full-screen';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the AndroidFullScreenPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -9,14 +14,10 @@ import { AndroidFullScreen } from '@ionic-native/android-full-screen';
   templateUrl: 'android-full-screen.html',
 })
 export class AndroidFullScreenPage {
-  error: any;
 
-  constructor(private androidFullScreen: AndroidFullScreen) { }
-  toggle(){
-    this.androidFullScreen.isImmersiveModeSupported()
-    .then(() => this.androidFullScreen.immersiveMode())
-    .catch((error: any) => this.error=error);
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AndroidFullScreenPage');
   }

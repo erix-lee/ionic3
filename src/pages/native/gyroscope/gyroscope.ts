@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the GyroscopePage page.
  *
@@ -15,24 +15,9 @@ import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native
 })
 export class GyroscopePage {
 
-  constructor(private gyroscope: Gyroscope) { }
-  watch() {
-    let options: GyroscopeOptions = {
-      frequency: 1000
-    };
-
-    this.gyroscope.getCurrent(options)
-      .then((orientation: GyroscopeOrientation) => {
-        console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);
-      })
-      .catch();
-
-
-    this.gyroscope.watch()
-      .subscribe((orientation: GyroscopeOrientation) => {
-        console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);
-      });
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad GyroscopePage');
   }

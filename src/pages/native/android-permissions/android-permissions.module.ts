@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { AndroidPermissionsPage } from './android-permissions';
-import { AndroidPermissions } from '@ionic-native/android-permissions';
+
 @NgModule({
   declarations: [
     AndroidPermissionsPage,
@@ -9,6 +9,5 @@ import { AndroidPermissions } from '@ionic-native/android-permissions';
   imports: [
     IonicPageModule.forChild(AndroidPermissionsPage),
   ],
-  providers:[AndroidPermissions]
 })
 export class AndroidPermissionsPageModule {}

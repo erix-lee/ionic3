@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Brightness } from '@ionic-native/brightness';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the BrightnessPage page.
@@ -16,11 +15,9 @@ import { Brightness } from '@ionic-native/brightness';
 })
 export class BrightnessPage {
 
-  constructor(private brightness: Brightness) { }
-  setBrightness(){
-    let brightnessValue: number = 0.8;
-    this.brightness.setBrightness(brightnessValue);
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad BrightnessPage');
   }

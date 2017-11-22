@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { ExtendedDeviceInformation } from '@ionic-native/extended-device-information';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the ExtendedDeviceInformationPage page.
  *
@@ -15,8 +15,8 @@ import { ExtendedDeviceInformation } from '@ionic-native/extended-device-informa
 })
 export class ExtendedDeviceInformationPage {
 
-  constructor(private extendedDeviceInformation: ExtendedDeviceInformation) { console.log('The Memory is: ' + this.extendedDeviceInformation.memory); }
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ExtendedDeviceInformationPage');

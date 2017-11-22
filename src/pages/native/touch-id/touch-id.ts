@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { TouchID } from '@ionic-native/touch-id';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the TouchIdPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -9,21 +15,9 @@ import { TouchID } from '@ionic-native/touch-id';
 })
 export class TouchIdPage {
 
-  constructor(private touchId: TouchID) { }
-  isAvailable() {
-    this.touchId.isAvailable()
-      .then(
-      res => console.log('TouchID is available!'),
-      err => console.error('TouchID is not available', err)
-      );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  verifyFingerprint() {
-    this.touchId.verifyFingerprint('Scan your fingerprint please')
-      .then(
-      res => console.log('Ok', res),
-      err => console.error('Error', err)
-      );
-  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad TouchIdPage');
   }

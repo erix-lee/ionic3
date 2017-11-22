@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the Base64ToGalleryPage page.
  *
@@ -15,14 +15,9 @@ import { Base64ToGallery } from '@ionic-native/base64-to-gallery';
 })
 export class Base64ToGalleryPage {
 
-  constructor(private base64ToGallery: Base64ToGallery) { }
-  baseGallery(){
-    let base64Data="";
-    this.base64ToGallery.base64ToGallery(base64Data, { prefix: '_img' }).then(
-      res => console.log('Saved image to gallery ', res),
-      err => console.log('Error saving image to gallery ', err)
-    );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad Base64ToGalleryPage');
   }

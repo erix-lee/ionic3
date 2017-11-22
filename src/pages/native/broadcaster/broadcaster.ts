@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Broadcaster } from '@ionic-native/broadcaster';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the BroadcasterPage page.
  *
@@ -15,15 +15,9 @@ import { Broadcaster } from '@ionic-native/broadcaster';
 })
 export class BroadcasterPage {
 
-  constructor(private broadcaster: Broadcaster) { }
-  subscribe() {
-
-    // Listen to events from Native
-    this.broadcaster.addEventListener('eventName').subscribe((event) => console.log(event));
-
-    // Send event to Native
-    this.broadcaster.fireNativeEvent('eventName', {}).then(() => console.log('success'));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad BroadcasterPage');
   }

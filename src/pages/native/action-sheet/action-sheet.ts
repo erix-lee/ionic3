@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { ActionSheet, ActionSheetOptions } from '@ionic-native/action-sheet';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the ActionSheetPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -10,24 +15,9 @@ import { ActionSheet, ActionSheetOptions } from '@ionic-native/action-sheet';
 })
 export class ActionSheetPage {
 
-  constructor(private actionSheet: ActionSheet) { }
-  show() {
-    let buttonLabels = ['Share via Facebook', 'Share via Twitter'];
-
-    const options: ActionSheetOptions = {
-      title: 'What do you want with this image?',
-      subtitle: 'Choose an action',
-      buttonLabels: buttonLabels,
-      addCancelButtonWithLabel: 'Cancel',
-      addDestructiveButtonWithLabel: 'Delete',
-      androidTheme: this.actionSheet.ANDROID_THEMES.THEME_HOLO_DARK,
-      destructiveButtonLast: true
-    };
-
-    this.actionSheet.show(options).then((buttonIndex: number) => {
-      console.log('Button pressed: ' + buttonIndex);
-    });
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ActionSheetPage');
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage} from 'ionic-angular';
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the InAppBrowserPage page.
  *
@@ -15,14 +15,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 })
 export class InAppBrowserPage {
 
-  constructor(private iab: InAppBrowser) { }
-  create(){
-    const browser = this.iab.create('https://ionicframework.com/');
-    
-   // browser.executeScript(...);
-    //browser.insertCSS(...);
-    browser.close();
-  }  
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InAppBrowserPage');

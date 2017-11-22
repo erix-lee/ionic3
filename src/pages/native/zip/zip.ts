@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Zip } from '@ionic-native/zip';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+ * Generated class for the ZipPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -10,16 +15,11 @@ import { Zip } from '@ionic-native/zip';
 })
 export class ZipPage {
 
-  constructor(private zip: Zip) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ZipPage');
   }
-  unzip(){
-    this.zip.unzip('path/to/source.zip', 'path/to/dest', (progress) => console.log('Unzipping, ' + Math.round((progress.loaded / progress.total) * 100) + '%'))
-    .then((result) => {
-      if(result === 0) console.log('SUCCESS');
-      if(result === -1) console.log('FAILED');
-    });
-  }
+
 }

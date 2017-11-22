@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { DeviceAccounts } from '@ionic-native/device-accounts';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the DeviceAccountsPage page.
@@ -16,11 +15,8 @@ import { DeviceAccounts } from '@ionic-native/device-accounts';
 })
 export class DeviceAccountsPage {
 
-  constructor(private deviceAccounts: DeviceAccounts) {
-    this.deviceAccounts.get()
-    .then(accounts => console.log(accounts))
-    .catch(error => console.error(error));
-   }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DeviceAccountsPage');

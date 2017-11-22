@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Dialogs } from '@ionic-native/dialogs';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the DialogsPage page.
  *
@@ -15,10 +15,7 @@ import { Dialogs } from '@ionic-native/dialogs';
 })
 export class DialogsPage {
 
-  constructor(private dialogs: Dialogs) {
-    this.dialogs.alert('Hello world')
-    .then(() => console.log('Dialog dismissed'))
-    .catch(e => console.log('Error displaying dialog', e));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the ImageResizerPage page.
  *
@@ -15,19 +15,7 @@ import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer';
 })
 export class ImageResizerPage {
 
-  constructor(private imageResizer: ImageResizer) { 
-    let options = {
-      uri: "",
-      folderName: 'Protonet',
-      quality: 90,
-      width: 1280,
-      height: 1280
-     } as ImageResizerOptions;
-     
-     this.imageResizer
-       .resize(options)
-       .then((filePath: string) => console.log('FilePath', filePath))
-       .catch(e => console.log(e));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { FTP } from '@ionic-native/ftp';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the FtpPage page.
  *
@@ -15,12 +15,9 @@ import { FTP } from '@ionic-native/ftp';
 })
 export class FtpPage {
 
-  constructor(private fTP: FTP) { }
-  connect(){
-    this.fTP.connect('ftp_host', 'ftp_user', 'ftp_password')
-    .then((res: any) => console.log('Login successful', res))
-    .catch((error: any) => console.error(error));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FtpPage');
   }

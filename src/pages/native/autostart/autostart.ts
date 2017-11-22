@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Autostart } from '@ionic-native/autostart';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the AutostartPage page.
  *
@@ -15,16 +15,9 @@ import { Autostart } from '@ionic-native/autostart';
 })
 export class AutostartPage {
 
-  constructor(private autostart: Autostart) { }
-  enable(){
-    this.autostart.enable();
-    
-    
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  disable(){
-    this.autostart.disable();
-   
-  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad AutostartPage');
   }

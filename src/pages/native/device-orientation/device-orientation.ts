@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage} from 'ionic-angular';
-import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the DeviceOrientationPage page.
  *
@@ -15,22 +15,9 @@ import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-nativ
 })
 export class DeviceOrientationPage {
 
-  constructor(private deviceOrientation: DeviceOrientation) { }
-  getCurrentHeading(){
-    // Get the device current compass heading
-    this.deviceOrientation.getCurrentHeading().then(
-      (data: DeviceOrientationCompassHeading) => console.log(data),
-      (error: any) => console.log(error)
-    );
-    
-    // Watch the device compass heading change
-    var subscription = this.deviceOrientation.watchHeading().subscribe(
-      (data: DeviceOrientationCompassHeading) => console.log(data)
-    );
-    
-    // Stop watching heading change
-    subscription.unsubscribe();
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DeviceOrientationPage');
   }

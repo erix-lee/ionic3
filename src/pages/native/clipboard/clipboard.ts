@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Clipboard } from '@ionic-native/clipboard';
+
 /**
  * Generated class for the ClipboardPage page.
  *
@@ -15,19 +15,9 @@ import { Clipboard } from '@ionic-native/clipboard';
 })
 export class ClipboardPage {
 
-  constructor(private clipboard: Clipboard) { }
-  copy(){
-    this.clipboard.copy('Hello world');
-    
-    this.clipboard.paste().then(
-       (resolve: string) => {
-          alert(resolve);
-        },
-        (reject: string) => {
-          alert('Error: ' + reject);
-        }
-      );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClipboardPage');
   }

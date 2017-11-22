@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { DeviceFeedback } from '@ionic-native/device-feedback';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the DeviceFeedbackPage page.
  *
@@ -15,20 +15,8 @@ import { DeviceFeedback } from '@ionic-native/device-feedback';
 })
 export class DeviceFeedbackPage {
 
-  constructor(private deviceFeedback: DeviceFeedback) {
-    this.deviceFeedback.acoustic();
-    
-    this.deviceFeedback.haptic(0);
-    
-    this.deviceFeedback.isFeedbackEnabled()
-      .then((feedback) => {
-        console.log(feedback);
-        // {
-        //   acoustic: true,
-        //   haptic: true
-        // }
-      });
-   }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DeviceFeedbackPage');

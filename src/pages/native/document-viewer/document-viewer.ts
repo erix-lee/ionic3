@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { DocumentViewer,DocumentViewerOptions } from '@ionic-native/document-viewer';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the DocumentViewerPage page.
  *
@@ -15,14 +15,9 @@ import { DocumentViewer,DocumentViewerOptions } from '@ionic-native/document-vie
 })
 export class DocumentViewerPage {
 
-  constructor(private document: DocumentViewer) { }
-  viewDocument(){
-    const options: DocumentViewerOptions = {
-      title: 'My PDF'
-    }
-    
-    this.document.viewDocument('assets/myFile.pdf', 'application/pdf', options)
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DocumentViewerPage');
   }

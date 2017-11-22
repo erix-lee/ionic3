@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { BrowserTab } from '@ionic-native/browser-tab';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the BrowserTabPage page.
  *
@@ -15,25 +15,8 @@ import { BrowserTab } from '@ionic-native/browser-tab';
 })
 export class BrowserTabPage {
 
-  constructor(private browserTab: BrowserTab) {
-    
-      browserTab.isAvailable()
-        .then((isAvailable: boolean) => {
-    
-          if (isAvailable) {
-    
-            browserTab.openUrl('https://ionic.io');
-    
-          } else {
-    
-            // open URL with InAppBrowser instead or SafariViewController
-    
-          }
-    
-        });
-    
-    
-    }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BrowserTabPage');

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { CodePush } from '@ionic-native/code-push';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the CodePushPage page.
  *
@@ -15,15 +15,9 @@ import { CodePush } from '@ionic-native/code-push';
 })
 export class CodePushPage {
 
-  constructor(private codePush: CodePush) { }
-  subscribe() {
-    // note - mostly error & completed methods of observable will not fire
-    // as syncStatus will contain the current state of the update
-    this.codePush.sync().subscribe((syncStatus) => console.log(syncStatus));
-
-    const downloadProgress = (progress) => { console.log(`Downloaded ${progress.receivedBytes} of ${progress.totalBytes}`); }
-    this.codePush.sync({}, downloadProgress).subscribe((syncStatus) => console.log(syncStatus));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad CodePushPage');
   }

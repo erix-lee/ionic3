@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Globalization } from '@ionic-native/globalization';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the GlobalizationPage page.
  *
@@ -15,12 +15,8 @@ import { Globalization } from '@ionic-native/globalization';
 })
 export class GlobalizationPage {
 
-  constructor(private globalization: Globalization) { 
-    this.globalization.getPreferredLanguage()
-    .then(res => console.log(res))
-    .catch(e => console.log(e));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad GlobalizationPage');

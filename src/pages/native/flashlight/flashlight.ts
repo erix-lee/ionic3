@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Flashlight } from '@ionic-native/flashlight';
+
 /**
  * Generated class for the FlashlightPage page.
  *
@@ -15,7 +15,8 @@ import { Flashlight } from '@ionic-native/flashlight';
 })
 export class FlashlightPage {
 
-  constructor(private flashlight: Flashlight) {this.flashlight.switchOn(); }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FlashlightPage');

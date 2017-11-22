@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { FileOpener } from '@ionic-native/file-opener';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the FileOpenerPage page.
  *
@@ -15,12 +15,9 @@ import { FileOpener } from '@ionic-native/file-opener';
 })
 export class FileOpenerPage {
 
-  constructor(private fileOpener: FileOpener) { }
-  open() {
-    this.fileOpener.open('path/to/file.pdf', 'application/pdf')
-      .then(() => console.log('File is opened'))
-      .catch(e => console.log('Error openening file', e));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad FileOpenerPage');
   }

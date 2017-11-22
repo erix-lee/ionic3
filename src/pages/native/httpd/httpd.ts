@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Httpd, HttpdOptions } from '@ionic-native/httpd';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the HttpdPage page.
  *
@@ -15,16 +15,7 @@ import { Httpd, HttpdOptions } from '@ionic-native/httpd';
 })
 export class HttpdPage {
 
-  constructor(private httpd: Httpd) {
-    let options: HttpdOptions = {
-      www_root: 'httpd_root', // relative path to app's www directory
-      port: 80,
-      localhost_only: false
-    };
-
-    this.httpd.startServer(options).subscribe((data) => {
-      console.log('Server is live');
-    });
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { BackgroundMode } from '@ionic-native/background-mode';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the BackgroundModePage page.
  *
@@ -15,10 +15,9 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 })
 export class BackgroundModePage {
 
-  constructor(private backgroundMode: BackgroundMode) { }
-  enable(){
-    this.backgroundMode.enable();
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad BackgroundModePage');
   }

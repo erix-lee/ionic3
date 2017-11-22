@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage} from 'ionic-angular';
-import { EstimoteBeacons } from '@ionic-native/estimote-beacons';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the EstimoteBeaconsPage page.
  *
@@ -15,9 +15,8 @@ import { EstimoteBeacons } from '@ionic-native/estimote-beacons';
 })
 export class EstimoteBeaconsPage {
 
-  constructor(private eb: EstimoteBeacons) {this.eb.requestAlwaysAuthorization();
-    
-    this.eb.enableAnalytics(true); }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EstimoteBeaconsPage');

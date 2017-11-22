@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { DBMeter } from '@ionic-native/db-meter';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the DbMeterPage page.
  *
@@ -15,27 +15,9 @@ import { DBMeter } from '@ionic-native/db-meter';
 })
 export class DbMeterPage {
 
-  constructor(private dbMeter: DBMeter) { }
-  subscribe() {
-    // Start listening
-    let subscription = this.dbMeter.start().subscribe(
-      data => console.log(data)
-    );
-
-    // Check if we are listening
-    this.dbMeter.isListening().then(
-      (isListening: boolean) => console.log(isListening)
-    );
-
-    // Stop listening
-    subscription.unsubscribe();
-
-    // Delete DBMeter instance from memory
-    this.dbMeter.delete().then(
-      () => console.log('Deleted DB Meter instance'),
-      error => console.log('Error occurred while deleting DB Meter instance')
-    );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad DbMeterPage');
   }

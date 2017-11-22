@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Alipay, AlipayOrder } from '@ionic-native/alipay';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the AlipayPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 @IonicPage()
 @Component({
@@ -9,35 +15,9 @@ import { Alipay, AlipayOrder } from '@ionic-native/alipay';
 })
 export class AlipayPage {
 
-  constructor(private alipay: Alipay) {
-
-
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  pay() {
-    const alipayOrder: AlipayOrder = {
-      "app_id": "app_id",
-      "method": 'alipay.trade.app.pay',
-      "format": 'json',
-      "charset": 'UTF-8',
-      "sign_type": 'RSA',
-      "timestamp": "Y-m-d H:i:s",
-      "version": '1.0',
-      "notify_url": "url",
-      "biz_content": "",
 
-      "sign": ""
-
-    };
-
-
-    this.alipay.pay(alipayOrder)
-      .then(result => {
-        console.log(result); // Success
-      })
-      .catch(error => {
-        console.log(error); // Failed
-      });
-  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AlipayPage');
   }

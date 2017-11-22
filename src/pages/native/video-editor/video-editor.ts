@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { VideoEditor } from '@ionic-native/video-editor';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the VideoEditorPage page.
  *
@@ -15,18 +15,11 @@ import { VideoEditor } from '@ionic-native/video-editor';
 })
 export class VideoEditorPage {
 
-  constructor(private videoEditor: VideoEditor) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VideoEditorPage');
   }
-  transcodeVideo() {
-    this.videoEditor.transcodeVideo({
-      fileUri: '/path/to/input.mov',
-      outputFileName: 'output.mp4',
-      outputFileType:this.videoEditor.OutputFileType.MPEG4
-    })
-      .then((fileUri: string) => console.log('video transcode success', fileUri))
-      .catch((error: any) => console.log('video transcode error', error));
-  }
+
 }

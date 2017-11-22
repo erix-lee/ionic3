@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Toast } from '@ionic-native/toast';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the ToastPage page.
  *
@@ -15,14 +15,9 @@ import { Toast } from '@ionic-native/toast';
 })
 export class ToastNativePage {
 
-  constructor(private toast: Toast) { }
-  show() {
-    this.toast.show(`I'm a toast`, '5000', 'center').subscribe(
-      toast => {
-        console.log(toast);
-      }
-    );
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ToastPage');
   }

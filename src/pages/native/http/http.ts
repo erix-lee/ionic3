@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { HTTP } from '@ionic-native/http';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the HttpPage page.
  *
@@ -15,24 +15,9 @@ import { HTTP } from '@ionic-native/http';
 })
 export class HttpPage {
 
-  constructor(private http: HTTP) { }
-  get(){
-    this.http.get('http://ionic.io', {}, {})
-    .then(data => {
-  
-      console.log(data.status);
-      console.log(data.data); // data received by server
-      console.log(data.headers);
-  
-    })
-    .catch(error => {
-  
-      console.log(error.status);
-      console.log(error.error); // error message as string
-      console.log(error.headers);
-  
-    });
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad HttpPage');
   }

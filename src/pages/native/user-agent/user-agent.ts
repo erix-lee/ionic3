@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { UserAgent } from '@ionic-native/user-agent';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the UserAgentPage page.
  *
@@ -15,24 +15,9 @@ import { UserAgent } from '@ionic-native/user-agent';
 })
 export class UserAgentPage {
 
-  constructor(private userAgent: UserAgent) { }
-  set() {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
-    this.userAgent.set('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36')
-      .then((res: any) => console.log(res))
-      .catch((error: any) => console.error(error));
-  }
-  get() {
-    this.userAgent.get()
-      .then((res: any) => console.log(res))
-      .catch((error: any) => console.error(error));
-
-  }
-  reset() {
-    this.userAgent.reset()
-      .then((res: any) => console.log(res))
-      .catch((error: any) => console.error(error));
-  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserAgentPage');
   }

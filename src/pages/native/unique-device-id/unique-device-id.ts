@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the UniqueDeviceIdPage page.
  *
@@ -15,12 +15,9 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 })
 export class UniqueDeviceIdPage {
 
-  constructor(private uniqueDeviceID: UniqueDeviceID) { }
-  get() {
-    this.uniqueDeviceID.get()
-      .then((uuid: any) => console.log(uuid))
-      .catch((error: any) => console.log(error));
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad UniqueDeviceIdPage');
   }

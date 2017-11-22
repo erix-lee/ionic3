@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { HeaderColor } from '@ionic-native/header-color';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the HeaderColorPage page.
  *
@@ -15,8 +15,7 @@ import { HeaderColor } from '@ionic-native/header-color';
 })
 export class HeaderColorPage {
 
-  constructor(private headerColor: HeaderColor) {
-    this.headerColor.tint('#becb29');
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {

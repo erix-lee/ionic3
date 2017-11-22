@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { ZBar, ZBarOptions } from '@ionic-native/zbar';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the ZbarPage page.
  *
@@ -15,21 +15,9 @@ import { ZBar, ZBarOptions } from '@ionic-native/zbar';
 })
 export class ZbarPage {
 
-  constructor(private zbar: ZBar) { }
-  sacn() {
-    let options: ZBarOptions = {
-      flash: 'off',
-      drawSight: false
-    };
-
-    this.zbar.scan(options)
-      .then(result => {
-        console.log(result); // Scanned code
-      })
-      .catch(error => {
-        console.log(error); // Error message
-      });
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad ZbarPage');
   }

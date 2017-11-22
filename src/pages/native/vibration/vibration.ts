@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { Vibration } from '@ionic-native/vibration';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the VibrationPage page.
  *
@@ -15,24 +15,9 @@ import { Vibration } from '@ionic-native/vibration';
 })
 export class VibrationPage {
 
-  constructor(private vibration: Vibration) { }
-  vibrate() {
-    // Vibrate the device for a second
-    // Duration is ignored on iOS.
-    this.vibration.vibrate(1000);
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  vibrate2() {
-    // Vibrate 2 seconds
-    // Pause for 1 second
-    // Vibrate for 2 seconds
-    // Patterns work on Android and Windows only
-    this.vibration.vibrate([2000, 1000, 2000]);
-  }
-  vibrate3() {
-    // Stop any current vibrations immediately
-    // Works on Android and Windows only
-    this.vibration.vibrate(0);
-  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad VibrationPage');
   }

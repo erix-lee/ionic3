@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
-import { FileEncryption } from '@ionic-native/file-encryption';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 /**
  * Generated class for the FileEncryptionPage page.
  *
@@ -15,14 +15,11 @@ import { FileEncryption } from '@ionic-native/file-encryption';
 })
 export class FileEncryptionPage {
 
-  constructor(private fileEncryption: FileEncryption) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FileEncryptionPage');
   }
-  encrypt(){
-    this.fileEncryption.decrypt('assets/json/topSecret.json', 'secretKey');
-    
-    this.fileEncryption.encrypt('assets/json/topSecret.json', 'secretKey');
-  }
+
 }
