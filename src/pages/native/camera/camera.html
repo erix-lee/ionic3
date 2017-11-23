@@ -14,5 +14,15 @@
 
 
 <ion-content padding>
-
+<img [src]="base64Image"/>
+<video [src]="video"></video>
+<button  ion-button block (click)="getCamera()">
+  carema
+</button>
+<button  ion-button block (click)="getPhotoLib()">
+  photolib
+</button>
+<button  ion-button block (click)="getVideo()">
+  video
+</button>
 </ion-content>
