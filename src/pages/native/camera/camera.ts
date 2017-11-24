@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage } from 'ionic-angular';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 /**
  * Generated class for the CameraPage page.
  *
@@ -14,10 +14,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'camera.html',
 })
 export class CameraPage {
+  base64Image: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private camera: Camera) { }
+  getPicture() {
+
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      // imageData is either a base64 encoded string or a file URI
+      // If it's base64:
+      this.base64Image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+      // Handle error
+    });
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad CameraPage');
   }
