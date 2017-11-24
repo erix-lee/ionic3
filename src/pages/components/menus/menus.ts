@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController } from 'ionic-angular';
 
 /**
  * Generated class for the MenusPage page.
@@ -15,9 +15,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MenusPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  items: Array<{ title: string, page: any }>;
 
+  constructor(public navCtrl: NavController) {
+
+
+    this.items = [
+      {
+        title: 'action-sheets',
+        page: 'ActionSheetsPage'
+      },
+      {
+        title: 'alerts',
+        page: 'AlertsPage'
+      },
+      {
+        title: 'alerts-checkbox',
+        page: 'AlertsCheckboxPage'
+      }]
+  }
+  itemTapped(event, item) {
+    this.navCtrl.push(item.page);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenusPage');
   }

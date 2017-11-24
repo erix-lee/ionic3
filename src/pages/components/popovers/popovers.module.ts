@@ -4,10 +4,12 @@ import { PopoversPage } from './popovers';
 
 @NgModule({
   declarations: [
-    PopoversPage,
+    PopoversPage
   ],
   imports: [
     IonicPageModule.forChild(PopoversPage),
+    
   ],
+
 })
 export class PopoversPageModule {}

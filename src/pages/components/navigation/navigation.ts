@@ -17,7 +17,12 @@ export class NavigationPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
+  onePage(){
+    this.navCtrl.push("ActionSheetsPage");
+  }
+  goBack() {
+    this.navCtrl.pop();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad NavigationPage');
   }

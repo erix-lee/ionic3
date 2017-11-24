@@ -1,12 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { IonicPage,  PopoverController } from 'ionic-angular';
 
-/**
- * Generated class for the PopoversPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,7 +9,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PopoversPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  @ViewChild('popoverContent', { read: ElementRef }) content: ElementRef;
+  @ViewChild('popoverText', { read: ElementRef }) text: ElementRef;
+
+  constructor(private popoverCtrl: PopoverController) {
+
+  }
+
+  presentPopover(ev) {
+
+    let popover = this.popoverCtrl.create('PopoverContentPage', {
+      contentEle: this.content.nativeElement,
+      textEle: this.text.nativeElement
+    });
+
+    popover.present({
+      ev: ev
+    });
   }
 
   ionViewDidLoad() {
