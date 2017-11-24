@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage } from 'ionic-angular';
+import { BatteryStatus, BatteryStatusResponse } from '@ionic-native/battery-status';
 /**
  * Generated class for the BatteryStatusPage page.
  *
@@ -15,9 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class BatteryStatusPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(private batteryStatus: BatteryStatus) { }
+  subscribe() {
+    let subscription = this.batteryStatus.onChange().subscribe(
+      (status: BatteryStatusResponse) => {
+        console.log(status.level, status.isPlugged);
+      }
+    );
 
+    // stop watch
+    subscription.unsubscribe();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad BatteryStatusPage');
   }

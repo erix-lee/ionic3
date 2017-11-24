@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage } from 'ionic-angular';
+import { File } from '@ionic-native/file';
 /**
  * Generated class for the FilePage page.
  *
@@ -15,7 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FilePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private file: File) {
+    this.file.checkDir(this.file.dataDirectory, 'mydir').then(_ => console.log('Directory exists')).catch(err => console.log('Directory doesnt exist'));
   }
 
   ionViewDidLoad() {

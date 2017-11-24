@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage } from 'ionic-angular';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion';
 /**
  * Generated class for the DeviceMotionPage page.
  *
@@ -15,9 +15,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DeviceMotionPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private deviceMotion: DeviceMotion) { }
+  getCurrentAcceleration() {
+    // Get the device current acceleration
+    this.deviceMotion.getCurrentAcceleration().then(
+      (acceleration: DeviceMotionAccelerationData) => console.log(acceleration),
+      (error: any) => console.log(error)
+    );
   }
+  watchAcceleration() {
+    // Watch device acceleration
+    var subscription = this.deviceMotion.watchAcceleration().subscribe((acceleration: DeviceMotionAccelerationData) => {
+      console.log(acceleration);
+    });
 
+    // Stop watch
+    subscription.unsubscribe();
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DeviceMotionPage');
   }

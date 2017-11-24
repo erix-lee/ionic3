@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage } from 'ionic-angular';
+import { Device } from '@ionic-native/device';
 /**
  * Generated class for the DevicePage page.
  *
@@ -15,8 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DevicePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(private device: Device) { console.log('Device UUID is: ' + this.device.uuid); }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DevicePage');
