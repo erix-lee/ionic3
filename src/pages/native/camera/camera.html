@@ -9,8 +9,8 @@
 
 
 <ion-content padding>
-  <img [src]="base64Image" />
-  <video [src]="video"></video>
+  <img [src]="base64Image" *ngIf="base64Image" />
+
   <button ion-button block (click)="getCamera()">
     carema
   </button>
