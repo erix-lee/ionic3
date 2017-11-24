@@ -1,9 +1,4 @@
-<!--
-  Generated template for the CameraPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -14,7 +9,12 @@
 
 
 <ion-content padding>
-  <p>
-    <button ion-button color="light" block (click)="getPicture()">Light</button>
-  </p>
+  <img [src]="base64Image" />
+  <video [src]="video"></video>
+  <button ion-button block (click)="getCamera()">
+    carema
+  </button>
+  <button ion-button block (click)="getPhotoLib()">
+    photolib
+  </button>
 </ion-content>
